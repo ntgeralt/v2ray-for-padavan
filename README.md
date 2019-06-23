@@ -3,11 +3,12 @@ How to USE
 -------------------
 chnroute mode:
 
-'sh /etc_ro/v2ray/whitelist.sh'
+sh /etc_ro/v2ray/whitelist.sh
 
 ---------------------
 gfwlist mode:
-'sh /etc_ro/v2ray/gfwlist.sh'
+
+sh /etc_ro/v2ray/gfwlist.sh
 
 Replace your information >> config.json & gfwconfig.json
 
