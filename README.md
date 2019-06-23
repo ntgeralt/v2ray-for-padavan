@@ -1,7 +1,8 @@
-# How to USE
+How to USE
 
 -------------------
 chnroute mode:
+
 'sh /etc_ro/v2ray/whitelist.sh'
 
 ---------------------
