@@ -1,0 +1,72 @@
+{
+    "inbounds": [
+        {
+            "port": 12345,
+            "listen": "0.0.0.0",
+            "protocol": "dokodemo-door",
+            "settings": {
+                "network": "tcp",
+                "followRedirect": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "blocked"
+        },
+        {
+            "protocol": "vmess",
+            "tag": "proxy",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "========yourdomain.com=========",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "=======your id =============",
+								"security": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+			"streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "wsSettings": {
+                    "path": "/============your path =============="
+                }
+            },
+			"mux": {"enabled": true}
+        }
+    ],
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "proxy",
+                "domain": [
+                    "ext:h2y.dat:gfw"
+                ]
+            },
+            {
+                //"type": "field",
+                //"domain" : ["ext:h2y.dat:ad"],
+                //"outboundTag": "blocked"
+            }
+        ]
+    }
+}
