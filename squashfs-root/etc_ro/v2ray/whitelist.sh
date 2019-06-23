@@ -10,10 +10,10 @@ ipset -R < /etc_ro/v2ray/chnroute_ipset.conf
 iptables -t nat -N V2RAY
 #iptables -t mangle -N V2RAY
 
-# Ö±Á¬·şÎñÆ÷ IP
+# ç›´è¿æœåŠ¡å™¨ IP
 #iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
 
-# ÔÊĞíÁ¬½Ó±£ÁôµØÖ·
+# å…è®¸è¿æ¥ä¿ç•™åœ°å€
 iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
@@ -23,24 +23,24 @@ iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
-# ÖĞ¹úIP²»×ß´úÀí
+# ä¸­å›½IPä¸èµ°ä»£ç†
 iptables -t nat -A V2RAY -p tcp -m set --match-set chnroute dst -j RETURN
 #iptables -t nat -A V2RAY -p icmp -m set --match-set chnroute dst -j RETURN
 
-# ÆäÓà×ª·¢µ½12345¶Ë¿Ú
+# å…¶ä½™è½¬å‘åˆ°12345ç«¯å£
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
 iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
 
-#Ìí¼ÓUDP¹æÔò
+#æ·»åŠ UDPè§„åˆ™
 #ip route add local default dev lo table 100
 #ip rule add fwmark 1 lookup 100
 #iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
 #iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
 
-# ×ª·¢Â·ÓÉ
+# è½¬å‘è·¯ç”±
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
 #iptables -t nat -A OUTPUT -p tcp -j V2RAY
 #iptables -t mangle -A PREROUTING -j V2RAY
@@ -59,4 +59,4 @@ fi
 
 cd /etc_ro/v2ray/
 
-SSL_CERT_FILE=./cacert.pem ./v2ray --config=config2.json &
+SSL_CERT_FILE=./cacert.pem ./v2ray --config=config.json &
