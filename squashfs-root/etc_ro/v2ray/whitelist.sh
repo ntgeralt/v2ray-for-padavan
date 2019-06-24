@@ -1,14 +1,8 @@
 #!/bin/sh
 ipset -R < /etc_ro/v2ray/chnroute_ipset.conf
 
-# ipset -N chnroute iphash
-
-# for ip in $(cat '/etc_ro/v2ray/chnroute.txt'); do
-#  ipset -A chnroute $ip
-# done
-
 iptables -t nat -N V2RAY
-#iptables -t mangle -N V2RAY
+
 
 # 直连服务器 IP
 #iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
@@ -25,7 +19,6 @@ iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
 # 中国IP不走代理
 iptables -t nat -A V2RAY -p tcp -m set --match-set chnroute dst -j RETURN
-#iptables -t nat -A V2RAY -p icmp -m set --match-set chnroute dst -j RETURN
 
 # 其余转发到12345端口
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
@@ -34,7 +27,7 @@ iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
 
-#添加UDP规则
+#添加UDP规则（预留特殊需要）
 #ip route add local default dev lo table 100
 #ip rule add fwmark 1 lookup 100
 #iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
