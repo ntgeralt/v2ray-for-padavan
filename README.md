@@ -10,10 +10,7 @@ sh /etc_ro/v2ray/whitelist.sh
 #gfwlist mode:
 sh /etc_ro/v2ray/gfwlist.sh
 ```
-use modify to inject v2ray to *.trx
-(https://www.lanzous.com/i4p480b)
-  
-  
+use  [modify](https://www.lanzous.com/i4p480b) to inject v2ray to *.trx
 
 
 
