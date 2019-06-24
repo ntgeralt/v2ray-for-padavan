@@ -63,9 +63,9 @@
                 ]
             },
             {
-                //"type": "field",
-                //"domain" : ["ext:h2y.dat:ad"],
-                //"outboundTag": "blocked"
+                "type": "field",
+                "domain" : ["ext:h2y.dat:ad"],
+                "outboundTag": "blocked"
             }
         ]
     }
