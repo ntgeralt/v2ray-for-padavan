@@ -23,7 +23,8 @@ sh /etc_ro/v2ray/gfwlist.sh
 * 添加755权限;
 
 * #### 设置自启动:
- * 在'防火墙规则启动后执行'里添加一段sh `/etc_ro/v2ray/`whitelist.sh
+ * 在'防火墙规则启动后执行'里添加一段sh /etc_ro/v2ray/whitelist.sh
+ * 注意更改路径 `/etc_ro/v2ray/`
 
 ##### * 更多信息请看`/v2ray/whitelist.sh`
   
