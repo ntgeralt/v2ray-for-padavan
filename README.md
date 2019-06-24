@@ -20,12 +20,14 @@ sh /etc_ro/v2ray/gfwlist.sh
 * v2ray文件夹放入下列任意一处：
 * USB设备，TMP目录，storage空间、或padavan trx解包后的etc_ro位置;
 
-* 修改 config.json（白名单）或gfwconfig.json（黑名单）为你客户端信息;
+* 修改config.json（白名单）或gfwconfig.json（黑名单）为你客户端信息;
 * 添加755权限;
 
 * #### 设置自启动:
  * 在'防火墙规则启动后执行'里添加一段sh /etc_ro/v2ray/whitelist.sh
- * 注意更改路径 `/etc_ro/v2ray/`
+ * 样例为trx解包，放入/etc_ro/重新封包使用。
+ * 如放入`/etc/storage`，需要把上面`/etc_ro/v2ray/`更改为 `/etc/storage/v2ray/`
+ * `/etc/whitelist.sh` 也有三处地址需要更改。
 
 ##### * 更多信息请看`/v2ray/whitelist.sh`
   
