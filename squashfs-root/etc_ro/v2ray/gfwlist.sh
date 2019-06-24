@@ -12,14 +12,14 @@ iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
 
-# 转发到12345端口
+# 脳陋路垄碌陆12345露脣驴脷
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
+iptables -t nat -A V2RAY -p tcp --dport 22:100 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
 
-# 转发路由
+# 脳陋路垄脗路脫脡
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
 #iptables -t nat -A OUTPUT -p tcp -j V2RAY
 #iptables -t mangle -A PREROUTING -j V2RAY
