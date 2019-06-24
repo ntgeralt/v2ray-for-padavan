@@ -27,7 +27,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
 <br>
 
 
- *  缺省路径为`/etc_ro/v2ray/`,一共有三处:启动脚本、和`v2ray/whitelist.sh` 的两处。
+ *  缺省路径为`/etc_ro/v2ray/`,一共有三处:开头的`sh /etc_ro/v2ray/whitelist.sh`、和`v2ray/whitelist.sh` 内两处。
  *  假如v2ray在USB设备、Tmp、或storage空间内，则三处需改动，如改动为:`/etc/storage/v2ray/`
  <br>
  
