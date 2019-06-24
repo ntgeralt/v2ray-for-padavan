@@ -15,7 +15,7 @@ sh /etc_ro/v2ray/gfwlist.sh
 
 
 
-## 如何使用：
+## 使用方式：
 
 * v2ray文件夹放入下列任意一处：
 * USB设备，TMP目录，storage空间、或padavan trx解包后的etc_ro位置;
