@@ -11,7 +11,7 @@ sh /etc_ro/v2ray/whitelist.sh
 sh /etc_ro/v2ray/gfwlist.sh
 ```
 use modify to inject v2ray to *.trx
-https://www.lanzous.com/i4p480b
+(https://www.lanzous.com/i4p480b)
   
   
 
