@@ -43,14 +43,16 @@
                     }
                 ]
             },
-			"streamSettings": {
+            "streamSettings": {
                 "network": "ws",
                 "security": "tls",
                 "wsSettings": {
                     "path": "/============your path =============="
                 }
             },
-			"mux": {"enabled": true}
+            "mux": {
+                "enabled": true
+            }
         }
     ],
     "routing": {
@@ -64,7 +66,9 @@
             },
             {
                 "type": "field",
-                "domain" : ["ext:h2y.dat:ad"],
+                "domain": [
+                    "ext:h2y.dat:ad"
+                ],
                 "outboundTag": "blocked"
             }
         ]
