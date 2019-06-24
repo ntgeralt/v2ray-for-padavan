@@ -22,7 +22,8 @@ sh /etc_ro/v2ray/gfwlist.sh
 
 * 修改config.json（白名单）或gfwconfig.json（黑名单）为你客户端信息;
 * 添加755权限;
-
+  
+  
 * #### 设置自启动:
  * 在'防火墙规则启动后执行'里添加一段sh /etc_ro/v2ray/whitelist.sh
  * 样例为trx解包，放入/etc_ro/重新封包使用。
