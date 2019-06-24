@@ -11,7 +11,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
 
 
 ## 使用方式：
-* 样例为trx解包，v2ray放入/etc_ro/里，之后重新封包使用。<a href="https://www.right.com.cn/forum/thread-747762-1-1.html" target="_blank">如何解包</a>
+* 样例为*.trx解包，v2ray放入/etc_ro/里封包使用。<a href="https://www.right.com.cn/forum/thread-747762-1-1.html" target="_blank">如何解包</a>
 * v2ray文件夹放入下列任意一处：
 * USB设备，TMP目录，storage空间、或padavan trx解包后的etc_ro位置;
 
