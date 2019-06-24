@@ -61,12 +61,13 @@
                 "type": "field",
                 "outboundTag": "proxy",
                 "domain": [
-                    "ext:h2y.dat:gfw"
+                    "ext:h2y.dat:gfw",
+                    "www.google.com.hk"
                 ]
             },
             {
-                "type": "field",
-                "outboundTag": "proxy", //-FOR-TELEGRAM
+                "type": "field",  //FOR-TELEGRAM
+                "outboundTag": "proxy",
                 "ip": [
                     "91.108.12.0/22",
                     "149.154.172.0/22",
