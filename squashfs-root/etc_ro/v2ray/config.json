@@ -29,7 +29,7 @@
                         "users": [
                             {
                                 "id": "================your id =================",
-								"security": "none"
+                                "security": "none"
                             }
                         ]
                     }
@@ -42,26 +42,30 @@
                     "path": "/================your path ========================="
                 }
             },
-			"mux": {"enabled": true}
+            "mux": {
+                "enabled": true
+            }
         },
         {
             "protocol": "freedom",
             "tag": "direct"
         },
-		{
-        "protocol": "blackhole",
-        "settings": {},
-        "tag": "blocked"
-         }
+        {
+            "protocol": "blackhole",
+            "settings": {
+                
+            },
+            "tag": "blocked"
+        }
     ],
-   "routing": {
+    "routing": {
         "rules": [
             {
                 "type": "field",
                 "outboundTag": "direct",
                 "domain": [
-                    // "geosite:cn",
-					"www.speedtest.net"
+                    //"geosite:cn",
+                    "www.speedtest.net"
                 ]
             }
         ]
