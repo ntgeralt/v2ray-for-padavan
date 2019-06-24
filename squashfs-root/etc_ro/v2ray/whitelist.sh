@@ -1,4 +1,10 @@
 #!/bin/sh
+modprobe ip_set
+modprobe ip_set_hash_ip
+modprobe ip_set_hash_net
+modprobe ip_set_bitmap_ip
+modprobe ip_set_list_set
+modprobe ipt_REDIRECT
 ipset -R < /etc_ro/v2ray/chnroute_ipset.conf
 
 iptables -t nat -N V2RAY
@@ -18,7 +24,8 @@ iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
 # 中国IP不走代理
-iptables -t nat -A V2RAY -p tcp -m set --match-set chnroute dst -j RETURN
+#iptables -t nat -A V2RAY -p tcp -m set --match-set chnroute dst -j RETURN
+iptables -t nat -A V2RAY -m set --match-set chnroute dst -j RETURN
 
 # 其余转发到12345端口
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
