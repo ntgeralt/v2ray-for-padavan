@@ -1,5 +1,3 @@
-* For MT7620/7621 Padavan
-
 ## How to USE
 
 ``` python
