@@ -26,10 +26,9 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
 
 <br>
 
- * v2ray文件夹可放入USB设备、TMP目录或storage空间;
- *  如放入`/etc/storage`，需把防火墙规则的`/etc_ro/v2ray/`更改为 `/etc/storage/v2ray/`
- * `v2ray/whitelist.sh` 也有两处地址需要更改。
-      
+
+ *  缺省路径为`/etc_ro/v2ray/`,一共有三处:启动脚本、和`v2ray/whitelist.sh` 的两处。
+ *  假如v2ray在USB设备、Tmp、或storage空间内，则三处需改动，如改动为:`/etc/storage/v2ray/`
  <br>
  
 ##### * 更多信息请看`/v2ray/whitelist.sh`
