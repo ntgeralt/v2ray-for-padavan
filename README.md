@@ -18,7 +18,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
   
   
 * #### 设置自启动:
- * 在'防火墙规则启动后执行'里添加一段sh /etc_ro/v2ray/whitelist.sh
+ * 在'防火墙规则启动后执行'里添加一段`sh /etc_ro/v2ray/whitelist.sh`
  
 <br>
 
