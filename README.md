@@ -12,6 +12,7 @@ sh /etc_ro/v2ray/gfwlist.sh
 ```
 use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to inject v2ray to *.trx
 
+
 ## 使用方式：
 
 * v2ray文件夹放入下列任意一处：
@@ -23,7 +24,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
   
 * #### 设置自启动:
  * 在'防火墙规则启动后执行'里添加一段sh /etc_ro/v2ray/whitelist.sh
- * 样例为trx解包，放入/etc_ro/重新封包使用。
+ * 样例为trx解包，放入/etc_ro/重新封包使用。<a href="https://www.right.com.cn/forum/thread-747762-1-1.html" target="_blank">如何解包</a>
  * 如放入`/etc/storage`，需要把上面`/etc_ro/v2ray/`更改为 `/etc/storage/v2ray/`
  * `/etc/whitelist.sh` 也有三处地址需要更改。
 
