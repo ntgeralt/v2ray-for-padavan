@@ -1,7 +1,14 @@
 #!/bin/sh
 ipset destroy chnroute
-
+# Create new chain
 iptables -t nat -N V2RAY
+
+# Ignore your V2Ray server's addresses
+# It's very IMPORTANT, just be careful.
+#iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
+
+# Ignore LANs and any other addresses you'd like to bypass the proxy
+# See Wikipedia and RFC5735 for full list of reserved networks.
 iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
@@ -12,14 +19,14 @@ iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
 
-# 其余转发到端口
+# Anything else should be redirected to Dokodemo-door's local port
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
 iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
 iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
 iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
 
-# 转发路由
+# Apply the rules
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
 #iptables -t nat -A OUTPUT -p tcp -j V2RAY
 #iptables -t mangle -A PREROUTING -j V2RAY
