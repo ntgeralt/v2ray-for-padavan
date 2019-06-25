@@ -2,6 +2,7 @@
 
 ``` python
 for squashfs-root/etc_ro/v2ray
+
 #chnroute mode:
 sh /etc_ro/v2ray/sh-whitelist.sh
 
