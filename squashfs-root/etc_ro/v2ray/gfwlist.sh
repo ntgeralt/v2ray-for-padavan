@@ -1,4 +1,10 @@
 #!/bin/sh
+lsmod | grep -q '^ip_set ' || modprobe ip_set
+lsmod | grep -q '^ip_set_hash_ip ' || modprobe ip_set_hash_ip
+lsmod | grep -q '^ip_set_hash_net ' || modprobe ip_set_hash_net
+lsmod | grep -q '^ip_set_bitmap_ip ' || modprobe ip_set_bitmap_ip
+lsmod | grep -q '^ip_set_list_set ' || modprobe ip_set_list_set
+lsmod | grep -q '^xt_set ' || modprobe xt_set
 ipset destroy chnroute
 # Create new chain
 iptables -t nat -N V2RAY
