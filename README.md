@@ -2,10 +2,10 @@
 
 ``` python
 #chnroute mode:
-sh /etc_ro/v2ray/whitelist.sh
+sh /etc_ro/v2ray/sh-whitelist.sh
 
 #gfwlist mode:
-sh /etc_ro/v2ray/gfwlist.sh
+sh /etc_ro/v2ray/sh-gfwlist.sh
 ```
 use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to inject v2ray to *.trx
 
