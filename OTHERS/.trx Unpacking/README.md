@@ -3,13 +3,12 @@
 ``` python
 #Unpacking
 ./modify.sh e RT-N56U.trx
-#edit config.json
-#chmod 775
-chmod 775 -R squashfs-root
+
+<br>
+
 #Repackage
 ./modify.sh c NEW-RT-N56U.trx
-#Reflash .trx firmware
-#Autorun: `sh /etc_ro/v2ray/sh-whitelist.sh`
+
 ```
 
 <br>
@@ -21,6 +20,7 @@ chmod 775 -R squashfs-root
 * 修改config.json（白名单）或config-gfw.json（黑名单）;
 * 递归775权限`chmod 775 -R squashfs-root`
 * 封包`./modify.sh c NEW-RT-N56U.trx`
+* 重刷固件
 * #### 设置自启动:
  * 在'防火墙规则启动后执行'里添加一段`sh /etc_ro/v2ray/sh-whitelist.sh`
  
