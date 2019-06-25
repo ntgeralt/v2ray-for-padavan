@@ -2,10 +2,10 @@
 
 ``` python
 #chnroute mode:
-sh /etc_ro/v2ray/whitelist.sh
+sh /etc_ro/v2ray/sh-whitelist.sh
 
 #gfwlist mode:
-sh /etc_ro/v2ray/gfwlist.sh
+sh /etc_ro/v2ray/sh-gfwlist.sh
 ```
 use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to inject v2ray to *.trx
 
@@ -18,7 +18,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
   
   
 * #### 设置自启动:
- * 在'防火墙规则启动后执行'里添加一段`sh /etc_ro/v2ray/whitelist.sh`
+ * 在'防火墙规则启动后执行'里添加一段`sh /etc_ro/v2ray/sh-whitelist.sh`
  
 <br>
 
@@ -34,7 +34,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
   * * 如：改动为`/etc/storage/v2ray/`
  <br>
  
-##### * 更多信息请看`/v2ray/whitelist.sh`
+##### * 更多信息请看`/v2ray/sh-whitelist.sh`
   
  <br>
  
