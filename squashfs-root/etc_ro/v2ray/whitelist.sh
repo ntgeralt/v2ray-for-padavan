@@ -28,10 +28,10 @@ iptables -t nat -A V2RAY -m set --match-set chnroute dst -j RETURN
 
 # 其余转发到12345端口
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
-#iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
+iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
 
 #添加UDP规则（预留特殊需要）
 #ip route add local default dev lo table 100
