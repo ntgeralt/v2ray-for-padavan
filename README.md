@@ -34,7 +34,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
   * * 如：改动为`/etc/storage/v2ray/`
  <br>
  
-##### * 更多信息请看`/v2ray/whitelist.sh`
+##### * 更多信息请看`/v2ray/sh-whitelist.sh`
   
  <br>
  
