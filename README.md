@@ -7,7 +7,7 @@ sh /etc_ro/v2ray/sh-whitelist.sh
 #gfwlist mode:
 sh /etc_ro/v2ray/sh-gfwlist.sh
 ```
-use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to inject v2ray to *.trx
+use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/.trx%20Unpacking" target="_blank">modify</a>  to inject v2ray to *.trx
 
 <br>
 
@@ -28,7 +28,7 @@ use   <a href="https://www.lanzous.com/i4p480b" target="_blank">modify</a>  to i
 
 
  *  缺省路径为`/etc_ro/v2ray/`,一共有三处:
-  * * 开头的`sh /etc_ro/v2ray/whitelist.sh` 
+  * * 开头的`sh /etc_ro/v2ray/sh-whitelist.sh` 
   * * 和`v2ray/whitelist.sh` 内两处。
   * *  假如v2ray在USB设备、Tmp、或storage空间内，则三处需改动
   * * 如：改动为`/etc/storage/v2ray/`
