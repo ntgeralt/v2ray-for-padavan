@@ -10,10 +10,12 @@ sed -e "s/^/add chnroute /" /etc_ro/v2ray/chnroute.txt | ipset restore
 
 iptables -t nat -N V2RAY
 
-# 直连服务器 IP
+# Ignore your V2Ray server's addresses
+# It's very IMPORTANT, just be careful.
 #iptables -t nat -A V2RAY -d 123.123.123.123 -j RETURN
 
-# 允许连接保留地址
+# Ignore LANs and any other addresses you'd like to bypass the proxy
+# See Wikipedia and RFC5735 for full list of reserved networks.
 iptables -t nat -A V2RAY -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY -d 10.0.0.0/8 -j RETURN
 iptables -t nat -A V2RAY -d 127.0.0.0/8 -j RETURN
@@ -23,23 +25,23 @@ iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
-# 中国IP不走代理
+# Ignore chnroute
 iptables -t nat -A V2RAY -m set --match-set chnroute dst -j RETURN
 
-# 其余转发到12345端口
+# Anything else should be redirected to Dokodemo-door's local port
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
 iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
 #iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
 
-#添加UDP规则（预留特殊需要）
+# Add any UDP rules
 #ip route add local default dev lo table 100
 #ip rule add fwmark 1 lookup 100
 #iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
 #iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
 
-# 转发路由
+# Apply the rules
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
 #iptables -t nat -A OUTPUT -p tcp -j V2RAY
 #iptables -t mangle -A PREROUTING -j V2RAY
