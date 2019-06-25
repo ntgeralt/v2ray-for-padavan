@@ -3,17 +3,12 @@
 ``` python
 #Unpacking
 ./modify.sh e RT-N56U.trx
-<br>
 #edit config.json
-<br>
 #chmod 775
 chmod 775 -R squashfs-root
-<br>
 #Repackage
 ./modify.sh c NEW-RT-N56U.trx
-<br>
 #Reflash .trx firmware
-<br>
 #Autorun: `sh /etc_ro/v2ray/sh-whitelist.sh`
 ```
 
