@@ -32,11 +32,11 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "========yourdomain.com=========",
+                        "address": "=====yourdomain.com=======",
                         "port": 443,
                         "users": [
                             {
-                                "id": "=======your id =============",
+                                "id": "=======yourid=========",
                                 "security": "none"
                             }
                         ]
@@ -47,7 +47,7 @@
                 "network": "ws",
                 "security": "tls",
                 "wsSettings": {
-                    "path": "/============your path =============="
+                    "path": "/======your-path=========="
                 }
             },
             "mux": {
@@ -62,7 +62,7 @@
                 "outboundTag": "proxy",
                 "domain": [
                     "ext:h2y.dat:gfw",
-					"www.google.com.hk"
+                    "www.google.com.hk"
                 ]
             },
             {
