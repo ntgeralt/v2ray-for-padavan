@@ -4,8 +4,6 @@
 #Unpacking
 ./modify.sh e RT-N56U.trx
 
-<br>
-
 #Repackage
 ./modify.sh c NEW-RT-N56U.trx
 
