@@ -59,4 +59,4 @@ fi
 
 cd /etc_ro/v2ray/
 
-SSL_CERT_FILE=./cacert.pem ./v2ray --config=gfwconfig.json &
+SSL_CERT_FILE=./cacert.pem ./v2ray --config=config-gfw.json &
