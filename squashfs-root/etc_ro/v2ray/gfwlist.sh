@@ -1,11 +1,18 @@
 #!/bin/sh
+
 lsmod | grep -q '^ip_set ' || modprobe ip_set
 lsmod | grep -q '^ip_set_hash_ip ' || modprobe ip_set_hash_ip
 lsmod | grep -q '^ip_set_hash_net ' || modprobe ip_set_hash_net
 lsmod | grep -q '^ip_set_bitmap_ip ' || modprobe ip_set_bitmap_ip
 lsmod | grep -q '^ip_set_list_set ' || modprobe ip_set_list_set
 lsmod | grep -q '^xt_set ' || modprobe xt_set
-ipset destroy chnroute
+
+iptables -t nat -D PREROUTING V2RAY  >/dev/null 2>&1
+iptables -t nat -D OUTPUT V2RAY  >/dev/null 2>&1
+/bin/iptables -t nat -F V2RAY >/dev/null 2>&1
+/bin/iptables -t nat -X V2RAY >/dev/null 2>&1
+ /sbin/ipset destroy chnroute >/dev/null 2>&1
+
 # Create new chain
 iptables -t nat -N V2RAY
 
