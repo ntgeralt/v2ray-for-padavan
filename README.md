@@ -28,7 +28,7 @@ use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/
 
 
  *  缺省路径为`/etc_ro/v2ray/`,一共有三处:
-  * * 开头的`sh /etc_ro/v2ray/whitelist.sh` 
+  * * 开头的`sh /etc_ro/v2ray/sh-whitelist.sh` 
   * * 和`v2ray/whitelist.sh` 内两处。
   * *  假如v2ray在USB设备、Tmp、或storage空间内，则三处需改动
   * * 如：改动为`/etc/storage/v2ray/`
