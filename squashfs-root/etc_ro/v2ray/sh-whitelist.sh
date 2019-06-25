@@ -11,7 +11,7 @@ iptables -t nat -D PREROUTING V2RAY  >/dev/null 2>&1
 iptables -t nat -D OUTPUT V2RAY  >/dev/null 2>&1
 /bin/iptables -t nat -F V2RAY >/dev/null 2>&1
 /bin/iptables -t nat -X V2RAY >/dev/null 2>&1
- /sbin/ipset destroy chnroute >/dev/null 2>&1
+/sbin/ipset destroy chnroute >/dev/null 2>&1
  
 ipset -exist create chnroute hash:net hashsize 64
 sed -e "s/^/add chnroute /" /etc_ro/v2ray/chnroute.txt | ipset restore

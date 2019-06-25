@@ -57,6 +57,6 @@ else
     kill $pid
 fi
 
-cd /etc_ro/v2ray/
+cd /media/AiDisk_a1/v2ray/
 
 SSL_CERT_FILE=./cacert.pem ./v2ray --config=config-gfw.json &

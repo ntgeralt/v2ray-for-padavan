@@ -12,6 +12,9 @@ iptables -t nat -D OUTPUT V2RAY  >/dev/null 2>&1
 /bin/iptables -t nat -F V2RAY >/dev/null 2>&1
 /bin/iptables -t nat -X V2RAY >/dev/null 2>&1
 /sbin/ipset destroy chnroute >/dev/null 2>&1
+ 
+ipset -exist create chnroute hash:net hashsize 64
+sed -e "s/^/add chnroute /" /tmp/v2ray/chnroute.txt | ipset restore
 
 # Create new chain
 iptables -t nat -N V2RAY
@@ -31,13 +34,21 @@ iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 
+# Ignore chnroute
+iptables -t nat -A V2RAY -m set --match-set chnroute dst -j RETURN
 
 # Anything else should be redirected to Dokodemo-door's local port
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
-#iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
+iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
+
+# Add any UDP rules
+#ip route add local default dev lo table 100
+#ip rule add fwmark 1 lookup 100
+#iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 12345 --tproxy-mark 0x01/0x01
+#iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
 
 # Apply the rules
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
@@ -45,8 +56,7 @@ iptables -t nat -A PREROUTING -p tcp -j V2RAY
 #iptables -t mangle -A PREROUTING -j V2RAY
 #iptables -t mangle -A OUTPUT -j V2RAY_MARK
 
-
-sleep 2
+sleep 1
 
 pid=$(ps | awk '/[v]2ray --config/{print $1}')
 
@@ -57,6 +67,6 @@ else
     kill $pid
 fi
 
-cd /etc_ro/v2ray/
+cd /tmp/v2ray/
 
-SSL_CERT_FILE=./cacert.pem ./v2ray --config=config-gfw.json &
+SSL_CERT_FILE=./cacert.pem ./v2ray --config=config.json &
