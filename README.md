@@ -26,12 +26,10 @@ use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/
 
 <br>
 
+* OTHER文件夹有三种不同路径启动方式，其中只在执行路径有变化：
+  * * 启动脚本sh /etc_ro/v2ray/sh-whitelist.sh` 
+  * * 和脚本`v2ray/sh-whitelist.sh` 内两处。
 
- *  缺省路径为`/etc_ro/v2ray/`,一共有三处:
-  * * 开头的`sh /etc_ro/v2ray/sh-whitelist.sh` 
-  * * 和`v2ray/whitelist.sh` 内两处。
-  * *  假如v2ray在USB设备、Tmp、或storage空间内，则三处需改动
-  * * 如：改动为`/etc/storage/v2ray/`
  <br>
  
 ##### * 更多信息请看`/v2ray/sh-whitelist.sh`
