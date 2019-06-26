@@ -46,7 +46,7 @@ iptables -t nat -A PREROUTING -p tcp -j V2RAY
 #iptables -t mangle -A OUTPUT -j V2RAY_MARK
 
 
-sleep 2
+sleep 1
 
 pid=$(ps | awk '/[v]2ray --config/{print $1}')
 
