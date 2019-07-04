@@ -7,7 +7,7 @@ sh /etc_ro/v2ray/sh-whitelist.sh
 #gfwlist mode:
 sh /etc_ro/v2ray/sh-gfwlist.sh
 ```
-use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/.trx%20Unpacking" target="_blank">modify</a>  to inject v2ray to *.trx
+use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/.trx%20Unpacking" target="_blank">modify</a>  to 'inject' v2ray to *.trx
 
 <br>
 
