@@ -12,7 +12,7 @@ use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/
 <br>
 
 ## 使用方式：
-* 样例为*.trx解包，v2ray放入/etc_ro/里封包使用。<a href="https://www.right.com.cn/forum/thread-747762-1-1.html" target="_blank">如何解包</a>
+* 样例为*.trx解包，v2ray放入/etc_ro/里封包使用。<a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/.trx%20Unpacking" target="_blank">如何解包</a>
 * 修改config.json（白名单）或config-gfw.json（黑名单）为你客户端信息;
 * 添加755权限;
   
