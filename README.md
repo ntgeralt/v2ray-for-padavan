@@ -26,7 +26,7 @@ use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/
 
 <br>
 
-* OTHER文件夹有三种不同路径启动方式，其中只在执行路径有变化：
+* Others文件夹有三种不同路径启动方式，其中只在执行路径有变化：
   * * 启动脚本sh /etc_ro/v2ray/sh-whitelist.sh` 
   * * 和脚本`v2ray/sh-whitelist.sh` 内两处。
 
