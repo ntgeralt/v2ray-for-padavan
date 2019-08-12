@@ -7,12 +7,12 @@
 * 白名单chnroute mode:
 sh /etc/storage/v2ray/sh-whitelist.sh
 
-*黑名单gfwlist mode:
+* 黑名单gfwlist mode:
 sh /etc/storage/v2ray/sh-gfwlist.sh
 
 *ALL DONE.Just Go surfing !
 
-除了把二进制文件和依赖放在USB外部储存，还可以放在TMP、STORAGE或trx固件封包；
+# 除了把二进制文件和依赖放在USB外部储存，还可以放在TMP、STORAGE或trx固件封包；
 推荐 USB和trx封包重刷； 
 
  <br>
