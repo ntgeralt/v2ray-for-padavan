@@ -12,7 +12,10 @@
 * ALL DONE . Just Go surfing !  
 
 
-## 主文件除了放USB外部储存，还可以放在TMP、STORAGE或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html "悬停显示")
+## 主文件除了放USB外部储存，还可以放在TMP、[STORAGE](https://www.right.com.cn/forum/thread-714749-1-1.html)或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html)
+
+
+
 * 推荐USB TF 外部储存和trx封包重刷； 
 * trx封包操作:
     * 选中你的trx固件解包 - 放入v2ray文件夹后重新打包成trx - breed重刷。
