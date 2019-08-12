@@ -1,38 +1,24 @@
-## How to USE
-
-``` python
-#chnroute mode:
-sh /etc_ro/v2ray/sh-whitelist.sh
-
-#gfwlist mode:
-sh /etc_ro/v2ray/sh-gfwlist.sh
-```
-use   <a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/.trx%20Unpacking" target="_blank">modify</a>  to 'inject' v2ray to *.trx
-
-<br>
-
-## 使用方式：
-* 样例为*.trx解包，v2ray放入/etc_ro/里封包使用。<a href="https://github.com/ntgeralt/v2ray-for-padavan/tree/master/OTHERS/.trx%20Unpacking" target="_blank">如何解包</a>
-* 修改config.json（白名单）或config-gfw.json（黑名单）为你客户端信息;
-* 添加755权限;
+## USB启动方式：
+* 下载FOR-USB-or-TF.zip，把里面文件夹分别放在路由内对应目录
+* 修改/etc/storage/v2ray/config.json(黑名单模式config-gfw.json)为你客户端信息
+* chmod 775 -R /media/AiDisk_a1/v2ray/
+* chmod 775 -R /etc/storage/v2ray/
+* 在自定义设置-脚本-'在防火墙规则启动后执行下'粘贴
+    * 白名单chnroute mode:  `sh /etc/storage/v2ray/sh-whitelist.sh`
+    * 或
+    * 黑名单gfwlist mode:   `sh /etc/storage/v2ray/sh-gfwlist.sh`
   
   
-* #### 设置自启动:
- * 在'防火墙规则启动后执行'里添加一段`sh /etc_ro/v2ray/sh-whitelist.sh`
- 
-<br>
+* ALL DONE . Just Go surfing !  
 
------------------------------
 
-<br>
-
-* Others文件夹有三种不同路径启动方式，其中只在执行路径有变化：
-  * * 启动脚本sh /etc_ro/v2ray/sh-whitelist.sh` 
-  * * 和脚本`v2ray/sh-whitelist.sh` 内两处。
+## 主文件除了放USB外部储存，还可以放在TMP、STORAGE或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html "悬停显示")
+* 推荐USB TF 外部储存和trx封包重刷； 
+* trx封包操作:
+    * 选中你的trx固件解包 - 放入v2ray文件夹后重新打包成trx - breed重刷。
+    * 请下载'FOR-封装.zip'并看里面<指引>
 
  <br>
- 
-##### * 更多信息请看`/v2ray/sh-whitelist.sh`
   
  <br>
  
