@@ -12,7 +12,7 @@
 * ALL DONE . Just Go surfing !  
 
 
-## 主文件除了放USB外部储存，还可以放在TMP、[STORAGE](https://www.right.com.cn/forum/thread-714749-1-1.html)或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html)
+## 主文件除了放USB外部储存，还可以放在TMP、[STORAGE空间](https://www.right.com.cn/forum/thread-714749-1-1.html)或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html)
 
 
 
