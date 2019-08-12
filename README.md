@@ -12,7 +12,7 @@ sh /etc/storage/v2ray/sh-gfwlist.sh
 
 *ALL DONE.Just Go surfing !
 
-### 除了把二进制文件和依赖放在USB外部储存，还可以放在TMP、STORAGE或trx固件封包；
+### 主文件除了放USB外部储存，还可以放在TMP、STORAGE或trx固件封包；
 #### 推荐 USB和trx封包重刷； 
 
  <br>
