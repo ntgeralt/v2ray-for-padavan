@@ -4,14 +4,14 @@
 * chmod 775 -R /media/AiDisk_a1/v2ray/
 * chmod 775 -R /etc/storage/v2ray/
 * 在自定义设置-脚本-'在防火墙规则启动后执行下'粘贴黑名单或白名单模式
-* 白名单chnroute mode:  `sh /etc/storage/v2ray/sh-whitelist.sh`
-* 黑名单gfwlist mode:   `sh /etc/storage/v2ray/sh-gfwlist.sh`
+    * 白名单chnroute mode:  `sh /etc/storage/v2ray/sh-whitelist.sh`
+    * 黑名单gfwlist mode:   `sh /etc/storage/v2ray/sh-gfwlist.sh`
   
   
 * ALL DONE . Just Go surfing !  
 
 
-## 主文件除了放USB外部储存，还可以放在TMP、STORAGE或trx固件封包；
+## 主文件除了放USB外部储存，还可以放在TMP、STORAGE或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html "悬停显示")
 * 推荐USB TF 外部储存和trx封包重刷； 
 * trx封包操作:
     * 选中你的trx固件解包 - 放入v2ray文件夹后重新打包成trx - breed重刷。
