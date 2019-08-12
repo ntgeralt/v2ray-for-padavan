@@ -13,8 +13,10 @@ sh /etc/storage/v2ray/sh-whitelist.sh
 ```Bash
 sh /etc/storage/v2ray/sh-gfwlist.sh
 ```
+  
+  
+* ALL DONE . Just Go surfing !  
 
-* ALL DONE.Just Go surfing !
 
 ## 主文件除了放USB外部储存，还可以放在TMP、STORAGE或trx固件封包；
 * 推荐USB TF 外部储存和trx封包重刷； 
