@@ -1,3 +1,5 @@
+实测MT7620/K2/优酷路由宝/MT7621 K2P/新3正常运行
+
 ## USB启动方式：
 * 下载FOR-USB-or-TF.zip，把里面文件夹分别放在路由内对应目录
 * 修改/etc/storage/v2ray/config.json(黑名单模式config-gfw.json)为你客户端信息
