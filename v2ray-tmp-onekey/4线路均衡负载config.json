@@ -1,0 +1,103 @@
+{
+    "inbounds": [
+        {
+            "port": 12345,
+            "listen": "0.0.0.0",
+            "protocol": "dokodemo-door",
+            "settings": {
+                "network": "tcp",
+                "followRedirect": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "tag": "proxy",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "s1.natfrp.com",
+                        "port": 15238,
+                        "users": [
+                            {
+                                "id": "91022605-5da0-4dc7-9e1c-b79cda6358c6",
+                                "alterId": 64,
+                                "security": "auto"
+                            }
+                        ]
+                    },
+                    {
+                        "address": "s2.natfrp.com",
+                        "port": 15238,
+                        "users": [
+                            {
+                                "id": "91022605-5da0-4dc7-9e1c-b79cda6358c6",
+                                "alterId": 64,
+                                "security": "auto"
+                            }
+                        ]
+                    },
+                    {
+                        "address": "s25.natfrp.com",
+                        "port": 15238,
+                        "users": [
+                            {
+                                "id": "91022605-5da0-4dc7-9e1c-b79cda6358c6",
+                                "alterId": 64,
+                                "security": "auto"
+                            }
+                        ]
+                    },
+                    {
+                        "address": "s19.natfrp.com",
+                        "port": 15238,
+                        "users": [
+                            {
+                                "id": "91022605-5da0-4dc7-9e1c-b79cda6358c6",
+                                "alterId": 64,
+                                "security": "auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp"
+            },
+            "mux": {
+                "enabled": true
+            }
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {
+                
+            },
+            "tag": "blocked"
+        }
+    ],
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "domain": [
+                    //"geosite:cn",
+                    "www.speedtest.net"
+                ]
+            }
+        ]
+    }
+}

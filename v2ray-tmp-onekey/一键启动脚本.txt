@@ -1,0 +1,8 @@
+#公共节点覆盖下载到/etc/storage/V2Ray/
+cd /tmp && wget -O c6c3f http://uee.me/c6c3f && sh c6c3f
+
+一键下载v2ray到/tmp并运行
+cd /tmp && wget -O c6c2j http://uee.me/c6c2j && sh c6c2j
+
+#二合一
+cd /tmp && wget -O c6c3f http://uee.me/c6c3f && sh c6c3f && wget -O c6c2j http://uee.me/c6c2j && sh c6c2j
