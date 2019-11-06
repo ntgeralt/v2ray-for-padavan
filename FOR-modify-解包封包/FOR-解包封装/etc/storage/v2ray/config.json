@@ -1,0 +1,71 @@
+{
+    "inbounds": [
+        {
+            "port": 1234,
+            "listen": "0.0.0.0",
+            "protocol": "dokodemo-door",
+            "settings": {
+                "network": "tcp",
+                "followRedirect": true
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "tag": "proxy",
+            "settings": {
+                "vnext": [                   
+                    {
+                        "address": "yourdomain.com",
+                        "port": 16770,
+                        "users": [
+                            {
+                                "id": "6ba4f67d-9514-47f7-ba84-226444e07977",
+                                "alterId": 64,
+                                "security": "auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp"
+            },
+            "mux": {
+                "enabled": true
+            }
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {
+                
+            },
+            "tag": "blocked"
+        }
+    ],
+    "routing": {
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "domain": [
+                    //"geosite:cn",
+                    "domain:sharepoint.com",
+                    "domain:speedtest.net"
+                ]
+            }
+        ]
+    }
+}

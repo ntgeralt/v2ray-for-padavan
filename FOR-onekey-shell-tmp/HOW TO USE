@@ -1,0 +1,32 @@
+Power by V2Ray 4.20.0_softfloat (V2Fly, a community-driven edition of V2Ray.) Custom 
+A unified platform for anti-censorship.
+
+
+#chnroute mode:
+sh /tmp/v2ray/start-whitelist.sh
+
+#stop v2ray:
+sh /tmp/v2ray/stop.sh
+
+#gfwlist mode:
+
+FIRST:
+edit & copy config-gfw.json to /etc/storage/V2Ray/
+
+THEN:
+sh /tmp/v2ray/start-gfwlist.sh
+
+
+----------------------------------------------------------------------
+
+
+#公共节点覆盖下载到/etc/storage/v2ray/
+cd /tmp && wget -O 77RI d.oo14.com/77RI && sh 77RI
+
+一键下载v2ray到/tmp并运行
+cd /tmp && wget -O c7RJ d.oo14.com/c7RJ && sh c7RJ
+
+#二合一
+一键启动脚本
+cd /tmp && wget -O 77RI d.oo14.com/77RI && sh 77RI && wget -O c7RJ d.oo14.com/c7RJ && sh c7RJ
+

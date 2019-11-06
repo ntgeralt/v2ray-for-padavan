@@ -1,0 +1,21 @@
+#白名单：节点信息outbound覆盖进/etc/storage/v2ray/config.json
+(黑名单手动改config-gfw.json)
+
+#设置权限
+chmod 775 -R /tmp/v2ray/
+chmod 775 -R /etc/storage/v2ray/
+
+#在自定义设置-脚本-'在防火墙规则启动后执行下'粘贴
+
+#白名单chnroute mode: 
+sh /tmp/v2ray/start-whitelist.sh
+
+#或
+
+#黑名单gfwlist mode: 
+sh /tmp/v2ray/start-gfwlist.sh
+
+ALL DONE!
+
+#you can add this in dnsmasq.conf to use customize DNS (OpenDNS#5353)
+conf-dir=/etc/storage/v2ray/, *.hosts
