@@ -10,7 +10,7 @@ port=0
 
 --------------copy clash to /tmp-------------------------
 
-js
+
 cd /tmp
 chmod +x clash
 
