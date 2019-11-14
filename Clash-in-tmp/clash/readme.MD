@@ -11,25 +11,25 @@ port=0
 
 
 cd /tmp
-chmod +x clash
+`chmod +x clash`
 
 start:
 
-sh /tmp/clash/start-whitelist.sh
+`sh /tmp/clash/start-whitelist.sh
 
-
+`
 
 
 stop:
 
-sh /tmp/clash/stop.sh
+`sh /tmp/clash/stop.sh`
 
 
 
 
 kill:
 
-kill -9 $(pidof clash)
+`kill -9 $(pidof clash)`
 -----------------------------------------------------
 
 
