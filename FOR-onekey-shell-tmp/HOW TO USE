@@ -20,13 +20,13 @@ sh /tmp/v2ray/start-gfwlist.sh
 ----------------------------------------------------------------------
 
 
-#¹«¹²½Úµã¸²¸ÇÏÂÔØµ½/etc/storage/v2ray/
-cd /tmp && wget -O 77RI d.oo14.com/77RI && sh 77RI
+#å…¬å…±èŠ‚ç‚¹è¦†ç›–ä¸‹è½½åˆ°/etc/storage/v2ray/
+wget -O - d.oo14.com/b7XS | bash
 
-Ò»¼üÏÂÔØv2rayµ½/tmp²¢ÔËĞĞ
-cd /tmp && wget -O c7RJ d.oo14.com/c7RJ && sh c7RJ
+ä¸€é”®ä¸‹è½½v2rayåˆ°/tmpå¹¶è¿è¡Œ
+wget -O - d.oo14.com/e7XT | bash
 
-#¶şºÏÒ»
-Ò»¼üÆô¶¯½Å±¾
-cd /tmp && wget -O 77RI d.oo14.com/77RI && sh 77RI && wget -O c7RJ d.oo14.com/c7RJ && sh c7RJ
+#äºŒåˆä¸€
+ä¸€é”®å¯åŠ¨è„šæœ¬
+wget -O - d.oo14.com/87XW | bash
 
