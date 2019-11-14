@@ -1,4 +1,4 @@
-﻿预设的clash运行在大陆白名单模式（全tcp转发到clash），启动的dns服务预设为fake 
+预设的clash运行在大陆白名单模式（全tcp转发到clash），启动的dns服务预设为fake 
 ip并发查询3路dns.
 
 启动前关闭路由自身dns 53端口服务：
@@ -6,7 +6,8 @@ ip并发查询3路dns.
 加入
 port=0
 
-```js
+```
+
 --------------copy clash to /tmp-------------------------
 
 js
