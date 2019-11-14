@@ -6,10 +6,10 @@ ip并发查询3路dns.
 加入
 port=0
 
-
+```js
 --------------copy clash to /tmp-------------------------
 
-```js
+js
 cd /tmp
 chmod +x clash
 
@@ -29,9 +29,9 @@ sh /tmp/clash/stop.sh
 
 kill:
 
-kill -9 $(pidof clash)```
+kill -9 $(pidof clash)
 -----------------------------------------------------
-
+```
 
 
 vmess节点加入方式：
