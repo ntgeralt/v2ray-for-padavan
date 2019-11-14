@@ -10,7 +10,7 @@ iptables -t nat -D OUTPUT V2RAY  >/dev/null 2>&1
 /sbin/ipset destroy chnroute >/dev/null 2>&1
 #echo "ipset chnroute"
 ipset -exist create chnroute hash:net hashsize 64
-sed -e "s/^/add chnroute /" /tmp/v2ray/chnroute.txt | ipset restore
+sed -e "s/^/add chnroute /" /etc_ro/v2ray/chnroute.txt | ipset restore
 echo ""
 echo ""
 echo "[setting iptables]"
@@ -49,21 +49,19 @@ echo "[Running On Chnroute Mode]"
 echo "-----------------------------------------------------------"
 echo ""
 echo "#stop v2ray"
-echo "sh /tmp/v2ray/stop.sh"
+echo "sh /etc/storage/v2ray/stop.sh"
 echo ""
 echo "#chnroute mode"
-echo "sh /tmp/v2ray/start-whitelist.sh"
+echo "sh /etc/storage/v2ray/start-whitelist.sh"
 echo ""
 echo "#gfwlist mode:"
-echo "sh /tmp/v2ray/start-gfwlist.sh"
+echo "sh /etc/storage/v2ray/start-gfwlist.sh"
 echo ""
-echo "#Autoruns:"
-echo "cd /tmp && wget -O c7RJ d.oo14.com/c7RJ && sh c7RJ"
 echo ""
 echo "-------------you can close this Windows-------------------"
 echo ""
 echo ""
 
-cd /tmp/v2ray/ 
+cd /etc_ro/v2ray/
 
-SSL_CERT_FILE=./cacert.pem ./v2ray --config=/etc/storage/v2ray/config.json &
+SSL_CERT_FILE=./cacert.pem ./v2ray --config=/etc/storage/v2ray/config.json >/dev/null 2>&1 &
