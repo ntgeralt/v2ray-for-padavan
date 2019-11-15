@@ -1,12 +1,11 @@
-预设的clash运行在大陆白名单模式（全tcp转发到clash），启动的dns服务预设为fake 
-ip
+预设的clash运行在大陆白名单模式（全tcp转发到clash），启动的dns服务预设为fake ip
 
-启动前关闭路由自身dns 53端口服务：
+启动前需关闭路由自身dns 53端口服务：
 自定义配置文件 "dnsmasq.conf"
 加入
 port=0
 
-```js
+```markdown
 
 --------------copy clash to /tmp-------------------------
 
