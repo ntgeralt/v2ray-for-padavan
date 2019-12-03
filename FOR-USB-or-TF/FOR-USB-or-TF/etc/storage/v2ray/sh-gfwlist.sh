@@ -16,11 +16,11 @@ iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 
 
 # Anything else should be redirected to Dokodemo-door's local port
-#iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 12345
-#iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 12345
-iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 12345
+#iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 1234
+#iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 1234
+iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 1234
+iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 1234
+iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 1234
 
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
 
@@ -35,7 +35,7 @@ else
     kill $pid
 fi
 
-cd /media/AiDisk_a1/v2ray/
+cd /media/AiCard_01/v2ray/
 
 SSL_CERT_FILE=./cacert.pem ./v2ray --config=/etc/storage/v2ray/config-gfw.json &
-##sh /etc/storage/v2ray/sh-gfwlist.sh
+#sh /etc/storage/v2ray/sh-gfwlist.sh
