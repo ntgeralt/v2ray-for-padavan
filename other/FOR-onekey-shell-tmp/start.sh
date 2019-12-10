@@ -2,6 +2,15 @@
 #echo "Load modprobe"
 modprobe ip_set_hash_net
 modprobe xt_set
+
+while [ -n "`pidof v2ray-watchdog`" ] ; do
+	kill -9 "`pidof v2ray-watchdog`"
+	sleep 1
+done
+echo "v2ray-watchdog killed."
+
+
+
 #echo "cleanning iptables "
 iptables -t nat -D PREROUTING V2RAY  >/dev/null 2>&1
 iptables -t nat -D OUTPUT V2RAY  >/dev/null 2>&1
@@ -24,13 +33,15 @@ iptables -t nat -A V2RAY -m set --match-set chnroute dst -j RETURN
 
 # Anything else should be redirected to Dokodemo-door's local port
 
-#iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 1234
-iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 1234
-iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 1234
-iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 1234
+iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 1234
+#iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 1234
+#iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 1234
+#iptables -t nat -A V2RAY -p tcp --dport 443 -j REDIRECT --to-ports 1234
 #iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 1234
 
 iptables -t nat -A PREROUTING -p tcp -j V2RAY
+
+
 
 
 pid=$(ps | awk '/[v]2ray --config/{print $1}')
@@ -43,19 +54,23 @@ echo ""
 echo "[V2Ray restarted]"
     kill $pid
 fi
-echo "--------------[Running on Chnroute Mode]--------------------"
+echo "-----------------[V2Ray started]---------------------------"
+echo ""
 echo ""
 echo "#stop v2ray"
 echo "sh /tmp/v2ray/stop.sh"
 echo ""
-echo "#chnroute mode"
-echo "sh /tmp/v2ray/start-whitelist.sh"
+echo "#Default config.json use GFW Mode"
 echo ""
-echo "#gfwlist mode:"
-echo "sh /tmp/v2ray/start-gfwlist.sh"
+echo "Chnroute file at /tmp/v2ray/example-config"
 echo ""
-echo "#Autoruns:[Scripts]-[Run After Firewall Rules Restarted]"
-echo "wget -O - d.oo14.com/e7XT  | bash"
+echo "#Autoruns:"
+echo "'Scripts' - 'Run After Firewall Rules Restarted'"
+echo "wget -O - d.oo14.com/e7XT | bash"
+echo ""
+echo "USE 5353 DNS FOR GFWLIST:"
+echo "Custom 'dnsmasq.conf'"
+echo "conf-dir=/etc/storage/v2ray/, *.hosts"
 echo ""
 echo "-------------you can close this Window---------------------"
 echo ""
@@ -63,4 +78,7 @@ echo ""
 
 cd /tmp/v2ray/ 
 
-SSL_CERT_FILE=./cacert.pem ./v2ray --config=/etc/storage/v2ray/config.json &
+SSL_CERT_FILE=./cacert.pem ./v2ray --config=/etc/storage/v2ray/config.json >/dev/null 2>&1 &
+
+/tmp/v2ray/v2ray-watchdog >/dev/null 2>&1 &
+echo "v2ray-watchdog started."

@@ -22,22 +22,25 @@
             "protocol": "vmess",
             "tag": "proxy",
             "settings": {
-                "vnext": [                   
+                "vnext": [
                     {
-                        "address": "yourdomain.com",
-                        "port": 16770,
+                        "address": "===============yourdomain.com==============",
+                        "port": 443,
                         "users": [
                             {
-                                "id": "6ba4f67d-9514-47f7-ba84-226444e07977",
-                                "alterId": 64,
-                                "security": "auto"
+                                "id": "================your id =================",
+                                "security": "none"
                             }
                         ]
                     }
                 ]
             },
             "streamSettings": {
-                "network": "tcp"
+                "network": "ws",
+                "security": "tls",
+                "wsSettings": {
+                    "path": "/================your path ========================="
+                }
             },
             "mux": {
                 "enabled": true
@@ -62,8 +65,7 @@
                 "outboundTag": "direct",
                 "domain": [
                     //"geosite:cn",
-                    "domain:sharepoint.com",
-                    "domain:speedtest.net"
+                    "www.speedtest.net"
                 ]
             }
         ]

@@ -32,11 +32,11 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "www.yourdomain.com",
+                        "address": "=====yourdomain.com=======",
                         "port": 443,
                         "users": [
                             {
-                                "id": "08bf7a3a-4a01-4766-a7c6-6c76e9212ee6",
+                                "id": "=======yourid=========",
                                 "security": "none"
                             }
                         ]
@@ -47,7 +47,7 @@
                 "network": "ws",
                 "security": "tls",
                 "wsSettings": {
-                    "path": "/game"
+                    "path": "/======your-path=========="
                 }
             },
             "mux": {

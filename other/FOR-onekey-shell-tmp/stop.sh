@@ -6,6 +6,7 @@ iptables -t nat -D OUTPUT V2RAY  >/dev/null 2>&1
 /sbin/ipset destroy chnroute >/dev/null 2>&1
 
 
+
 pid=$(ps | awk '/[v]2ray --config/{print $1}')
 
 if [ "$pid" == "" ]; then
@@ -14,3 +15,9 @@ else
     echo "V2Ray stop"
     kill $pid
 fi
+
+while [ -n "`pidof v2ray-watchdog`" ] ; do
+	kill -9 "`pidof v2ray-watchdog`"
+	sleep 1
+done
+echo "v2ray-watchdog killed."
