@@ -1,0 +1,15 @@
+#!/bin/sh
+
+while true; do
+	sleep 60
+
+pid=$(ps | awk '/[v]2ray --config/{print $1}')
+
+if [ "$pid" == "" ]; then
+/media/AiDisk_a1/v2ray/start.sh
+
+else
+echo ""
+fi
+
+done

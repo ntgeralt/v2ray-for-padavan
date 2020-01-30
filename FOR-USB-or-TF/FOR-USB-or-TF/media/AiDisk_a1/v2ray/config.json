@@ -24,7 +24,7 @@
         },
         {
             "protocol": "blackhole",
-            "tag": "blocked"
+            "tag": "block"
         },
         {
             "protocol": "vmess",
@@ -95,15 +95,13 @@
     "routing": {
         "rules": [
             {
+                "domain": ["ext:h2y.dat:ad"],
                 "type": "field",
-                "outboundTag": "block",//拦截广告相关域名
-                "domain": [
-                    "ext:h2y.dat:ad"
-                ]
+                "outboundTag": "block"
             },            
             {
                 "type": "field",
-                "outboundTag": "proxy",//被gfw屏蔽的域名走代理
+                "outboundTag": "proxy",
                 "domain": [
                     "ext:h2y.dat:gfw",
                     "domain:google.com.hk",
@@ -112,7 +110,7 @@
             },
             {
                 "type": "field",
-                "outboundTag": "proxy",//代理TELEGRAM
+                "outboundTag": "proxy",//FOR-TELEGRAM
                     "ip": [
                     "91.108.12.0/22",
                     "149.154.172.0/22",
@@ -129,7 +127,7 @@
             {
                 "type": "field",
                 "network": "tcp,udp",
-                "outboundTag": "direct"//默认直连
+                "outboundTag": "direct"
             }
         ]
     }
