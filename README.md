@@ -3,8 +3,8 @@ K1/K2/优酷路由宝/K2P/NEWIFI3正常运行
 
 ## USB启动方式：
 * 下载FOR-USB-or-TF.zip，把里面文件夹分别放在路由内对应目录
-* 修改/etc/storage/v2ray/config.json(黑名单模式config-gfw.json)为你客户端信息
-* chmod 775 -R /media/AiDisk_a1/v2ray/
+* 修改config.json为你客户端信息
+* 添加权限：chmod 775 -R /media/AiDisk_a1/v2ray/
 * 执行 `sh /etc/storage/v2ray/start.sh` 启动
 * 自启动：在自定义设置-脚本-'在防火墙规则启动后执行下'粘贴
     * `sleep 10 && sh /etc/storage/v2ray/start.sh`
