@@ -1,19 +1,30 @@
 支持MT7620/7621; 
+
 <br>
+
 实测K1/K2/优酷路由宝/K2P/NEWIFI3正常运行
- <br>
+
+<br>
+
 ## USB启动方式：
 * 下载FOR-USB-or-TF.zip，把里面文件夹放在路由内对应目录
 * 修改v2ray/config.json为你客户端信息
 * 添加权限：chmod 775 -R /media/AiDisk_a1/v2ray/
 * 执行 `sh /media/AiDisk_a1/v2ray/start.sh` 启动
- <br>
+
+<br>
+ 
 * ALL DONE . Just Go surfing !  
- <br>
+
+<br>
+ 
 * 自启动：在自定义设置-脚本-'在防火墙规则启动后执行下'粘贴
     * `sleep 10 && sh /media/AiDisk_a1/v2ray/start.sh`
- <br>
-  <br>
+    
+<br>
+ 
+<br>
+  
 ## 主文件除了放USB外部储存，还可以放在TMP、[STORAGE空间](https://www.right.com.cn/forum/thread-714749-1-1.html)或[trx固件封包](https://www.right.com.cn/forum/thread-747762-1-1.html)
 
 
