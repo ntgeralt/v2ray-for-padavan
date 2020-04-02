@@ -1,0 +1,70 @@
+{
+  "inbounds": [
+    {
+      "port": 10008, // 监听端口
+      "protocol": "socks", // 入口协议为 SOCKS 5
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "auth": "noauth"  //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证
+      }
+    }
+  ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "tag": "proxy",
+            "settings": {
+                "vnext": [
+                   {
+                        "address": "www.你的v2服务端域名.com",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "8142e6a2-d43b7-43aa5e7886b7",
+                                "alterId": 64,
+                                "security": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "tls",
+                "wsSettings": {
+                    "path": "/caddy"
+                }
+            },
+            "mux": {
+                "enabled": true
+            }
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {
+                
+            },
+            "tag": "blocked"
+        }
+    ],
+    "routing": {
+        "rules": [        
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "domain": [
+                    //"geosite:cn",
+                    //"domain:sharepoint.com",
+                    "domain:speedtest.net"
+                ]
+            }
+        ]
+    }
+}
