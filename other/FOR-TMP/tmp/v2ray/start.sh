@@ -4,8 +4,8 @@
 modprobe ip_set_hash_net
 modprobe xt_set
 
-#执行停止脚本
 cd /tmp/v2ray
+#执行停止脚本
 sh stop.sh
 
 #清理iptable
@@ -27,7 +27,7 @@ iptables -t nat -A V2RAY -d 127.0.0.1 -j RETURN
 iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A V2RAY -m set --match-set chnroute dst -j RETURN
 
-#22-500 tcp端口的海外流量交给v2ray
+#22-500 端口海外流量交给V2Ray
 iptables -t nat -A V2RAY -p tcp --dport 22:500 -j REDIRECT --to-ports 1234
 #iptables -t nat -A V2RAY -p tcp --dport 22 -j REDIRECT --to-ports 1234
 #iptables -t nat -A V2RAY -p tcp --dport 80 -j REDIRECT --to-ports 1234
